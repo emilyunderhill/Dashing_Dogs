@@ -1,0 +1,32 @@
+<div class= 'container fluid'>
+  <div class="justify-content-center">
+    <p>
+      <strong>Outfit: </strong>
+      <%= @outfit.name %>
+    </p>
+
+    <p>
+      <strong>Size: </strong>
+      <%= @outfit.size %>
+    </p>
+
+    <p>
+      <strong>Price: </strong>
+      <%= @outfit.price %>
+    </p>
+
+    <p>
+      <strong>Max loan period: </strong>
+      <%= @outfit.max_loan_period %>
+    </p>
+
+    <p>
+      <%= image_tag"pug.png", class:"pug_image"%>
+      <%#= @outfit.image %>
+    </p>
+
+    <%= link_to 'Back', outfits_path%>
+    <%= link_to 'Delete', outfit_path(@outfit), method: :delete, data: { confirm: 'Do you really want to delete?' }%>
+    <%= link_to 'Edit', edit_outfit_path(@outfit) %>
+  </div>
+</div>

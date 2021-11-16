@@ -11,6 +11,14 @@ class OutfitsController < ApplicationController
     redirect_to outfit_path(@outfit)
   end
 
+  def show
+    @outfit = Outfit.find(params[:id])
+  end
+
+  def index
+    @outfits = Outfit.all
+  end
+
   private
 
   def outfit_params

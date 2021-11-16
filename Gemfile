@@ -69,3 +69,6 @@ gem 'cloudinary', '~> 1.16.0'
 
 # User authentication
 gem 'devise'
+
+# Faker gem for seeding
+gem 'faker'
