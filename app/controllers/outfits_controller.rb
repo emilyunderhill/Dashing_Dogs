@@ -1,5 +1,6 @@
 class OutfitsController < ApplicationController
   before_action :set_outfit, only: %i[show edit update]
+  before_action :authenticate_user!
 
   def new
     @outfit = Outfit.new
