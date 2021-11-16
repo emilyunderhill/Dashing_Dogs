@@ -32,5 +32,6 @@
     <% if current_user != @outfit.user %>
       <%= link_to 'Book', new_outfit_booking_path(@outfit) %>
     <% end %>
+    <%= link_to 'Bookings', outfit_bookings_path(@outfit) %>
   </div>
 </div>
