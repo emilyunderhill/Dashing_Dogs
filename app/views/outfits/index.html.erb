@@ -3,8 +3,13 @@
 
 <% @outfits.each do |outfit| %>
   <div>
+    <% outfit.photos.each do |photo|%>
+      <div>
+        <%= cl_image_tag photo.key, crop: :fill, width: 200, height: 200 %>
+      </div>
+    <%end%>
     <%= outfit.name.capitalize %>
-    <%= outfit.size.upcase %>
+    <%= outfit.size.capitalize %>
     £<%= outfit.price %> / day
     <%= link_to "View", outfit_path(outfit) %>
   </div>
