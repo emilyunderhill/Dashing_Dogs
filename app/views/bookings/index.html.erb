@@ -1,0 +1,15 @@
+<div class="container">
+  <%= link_to outfit_path(@outfit) do %>
+    <div class="btn btn-primary">Back</div>
+  <% end %>
+
+  <% if @bookings.empty? %>
+    <h1>Sorry, there aren't any bookings yet</h1>
+  <% else %>
+    <% @bookings.each do |booking| %>
+      <h3><%= booking.user.first_name %> <%= booking.user.last_name %></h3>
+      <p>Start date: <%= booking.date_from%></p>
+      <p>End date: <%= booking.date_to %></p>
+    <% end %>
+  <% end %>
+</div>
