@@ -34,5 +34,6 @@
     <%= link_to 'Back', outfits_path%>
     <%= link_to 'Delete', outfit_path(@outfit), method: :delete, data: { confirm: 'Do you really want to delete?' }%>
     <%= link_to 'Edit', edit_outfit_path(@outfit) %>
+    <%= link_to 'Bookings', outfit_bookings_path(@outfit) %>
   </div>
 </div>
