@@ -21,8 +21,9 @@
     </p>
 
     <p>
-      <%= image_tag"pug.png", class:"pug_image"%>
-      <%#= @outfit.image %>
+      <% @outfit.photos.each do |photo|%>
+      <%= cl_image_tag photo.key, crop: :fill %>
+      <%end%>
     </p>
 
     <%= link_to 'Back', outfits_path%>
