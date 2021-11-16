@@ -7,9 +7,11 @@ class OutfitsController < ApplicationController
 
   def create
     @outfit = Outfit.new(outfit_params)
-    @outfit.save
-
-    redirect_to outfit_path(@outfit)
+    if @outfit.save
+      redirect_to outfit_path(@outfit)
+    else
+      render :new
+    end
   end
 
   def show; end
@@ -21,9 +23,11 @@ class OutfitsController < ApplicationController
   def edit; end
 
   def update
-    @oufit.update(outfit_params)
-
-    redirect_to outfit_path(@outfit)
+    if @oufit.update(outfit_params)
+      redirect_to outfit_path(@outfit)
+    else
+      render :edit
+    end
   end
 
   private
