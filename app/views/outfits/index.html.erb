@@ -1,0 +1,13 @@
+<h1>Doggie outfits</h1>
+
+
+<% @outfits.each do |outfit| %>
+  <div>
+    <%= outfit.name.capitalize %>
+    <%= outfit.size.upcase %>
+    £<%= outfit.price %> / day
+    <%= link_to "View", outfits_path(outfit) %>
+  </div>
+<% end %>
+
+<%= link_to "Back", root_path %>
