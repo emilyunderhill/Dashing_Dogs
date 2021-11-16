@@ -1,0 +1,9 @@
+<%= simple_form_for @outfit do |f| %>
+  <%= f.input :name, placeholder: @outfit.name %>
+  <%= f.input :size, placeholder: @outfit.size, collection: %w['extra small' 'small' 'medium' 'large' 'extra large']  %>
+  <%= f.input :price, placeholder: @outfit.price %>
+  <%= f.input :max_loan_period, placeholder: @outfit.max_loan_period %>
+  <%= f.input :photo, as: :file, label: 'Add photo' %>
+  <%= f.association :user %>
+  <%= f.submit %>
+<% end %>
