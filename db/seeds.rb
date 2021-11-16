@@ -10,7 +10,12 @@ puts 'seeding...'
 Outfit.destroy_all
 User.destroy_all
 
+x = 0
+
 10.times do
+  x += 1
+  puts "Creating user #{x} / 10"
+
   user = User.create(
     email: Faker::Internet.email,
     password: 'p@ssw0rd',
@@ -20,7 +25,13 @@ User.destroy_all
     address: Faker::Address.full_address,
     dog_breed: Faker::Creature::Dog.breed
   )
+
+  y = 1
+
   5.times do
+    puts "Creating outfit #{y} / 5 for user #{x} / 10"
+    y += 1
+
     outfit = Outfit.create!(
       name: Faker::Movies::HitchhikersGuideToTheGalaxy.specie,
       size: ['extra small', 'small', 'medium', 'large', 'extra large'].sample,
