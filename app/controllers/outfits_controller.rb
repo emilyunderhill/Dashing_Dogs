@@ -1,5 +1,5 @@
 class OutfitsController < ApplicationController
-  before_action :set_outfit, only: %i[show edit]
+  before_action :set_outfit, only: %i[show edit update]
 
   def new
     @outfit = Outfit.new
@@ -23,17 +23,23 @@ class OutfitsController < ApplicationController
   def edit; end
 
   def update
-    if @oufit.update(outfit_params)
+    if @outfit.update(outfit_params)
       redirect_to outfit_path(@outfit)
     else
       render :edit
     end
   end
 
+  def destroy
+    @outfit = Outfit.find(params[:id])
+    @outfit.destroy!
+    redirect_to '/outfits', :notice => "The outfit: #{@outfit.name} has been deleted"
+  end
+
   private
 
   def outfit_params
-    params.require(:outfit).permit(:name, :size, :price, :max_loan_period)
+    params.require(:outfit).permit(:name, :size, :price, :max_loan_period, :photo)
   end
 
   def set_outfit

@@ -1,5 +1,10 @@
 <div class= 'container fluid'>
   <div class="justify-content-center">
+
+    <%= link_to edit_outfit_path(@outfit.id) do %>
+    <div class="btn btn-warning">Edit</div>
+    <% end %>
+
     <p>
       <strong>Outfit: </strong>
       <%= @outfit.name %>
@@ -20,10 +25,11 @@
       <%= @outfit.max_loan_period %>
     </p>
 
-    <p>
-      <%= image_tag"pug.png", class:"pug_image"%>
-      <%#= @outfit.image %>
-    </p>
+    <div>
+      <% @outfit.photos.each do |photo|%>
+        <%= cl_image_tag photo.key, crop: :fill, width: 400, height: 400 %>
+      <%end%>
+    </div>
 
     <%= link_to 'Back', outfits_path%>
     <%= link_to 'Delete', outfit_path(@outfit), method: :delete, data: { confirm: 'Do you really want to delete?' }%>
