@@ -5,8 +5,45 @@
 
 .navbar-lewagon .navbar-collapse {
   flex-grow: 0;
+  display: inline-flex;
 }
 
 .navbar-lewagon .navbar-brand img {
-  width: 90px;
+  width: 150px;
+}
+
+.navbar-lewagon .navbar-button {
+  color: rgb(229, 153, 166);
+  background: rgb(235, 228, 235);
+  border: rgb(234, 224, 224);
+  text-decoration: none;
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 12px;
+  font-family: Helvetica;
+  white-space: nowrap;
+  padding: 2px 4px 4px 4px;
+  box-shadow: 0 2px 14px rgb(205, 204, 204);
+  cursor: pointer;
+  display: flex;
+  transition-duration: 0.4s;
+}
+
+.navbar-lewagon .navbar-button:hover {
+  background-color: #fdfefd;
+  color: rgb(229, 153, 166);
+}
+
+.navbar .navbar-expand-sm .navbar-light .navbar-lewagon {
+  justify-content: flex-end;
+  width: 45%;
+  display: flex;
+}
+
+.navbar .nav-item {
+  display: flex;
 }
