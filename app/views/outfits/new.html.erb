@@ -1,11 +1,8 @@
-<%= form_for(@outfit) do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name %>
-  <%= f.label :size %>
-  <%= f.text_field :size %>
-  <%= f.label :price %>
-  <%= f.number_field :price %>
-  <%= f.label :max_loan_period %>
-  <%= f.number_field :max_loan_period %>
+<%= simple_form_for(@outfit) do |f| %>
+  <%= f.input :name %>
+  <%= f.input :size, collection: ["extra small", "small", "medium", "large", "extra large"] %>
+  <%= f.input :price %>
+  <%= f.input :max_loan_period %>
+  <%= f.input :photos, as: :file, label: 'Add photo' %>
   <%= f.submit %>
 <% end %>
