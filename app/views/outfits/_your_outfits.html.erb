@@ -1,0 +1,33 @@
+<% if user_signed_in? %>
+  <% if current_user.outfits.empty? %>
+    <h4>You don't have any outfits yet. Add one now!</h4>
+    <div>
+      <%= link_to "Add outfit", new_outfit_path, class: "btn btn-success mx-3" %>
+    </div>
+  <% else %>
+    <% @outfits.each do |outfit| %>
+      <% if outfit.user == current_user %>
+        <div style="width: 200px; margin: 5px">
+          <% outfit.photos.each do |photo|%>
+            <div>
+              <%= cl_image_tag photo.key, crop: :fill, width: 200, height: 200 %>
+            </div>
+          <%end%>
+          <div class="d-flex">
+            <%= outfit.name.capitalize %>
+            <%= outfit.size.capitalize %>
+            £<%= outfit.price %> / day
+          </div>
+          <div class="d-flex">
+            <%= link_to "View", outfit_path(outfit), class: "btn btn-primary mx-1" %>
+            <%= link_to "Bookings", outfit_bookings_path(outfit), class: "btn btn-success mx-1" %>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+  <% end %>
+
+<% else %>
+  <h3>Please log in to see your outfits</h3>
+  TO DO: LOGIN BUTTON
+<% end %>
