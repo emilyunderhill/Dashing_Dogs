@@ -4,12 +4,18 @@
   <% end %>
 
   <% if @bookings.empty? %>
-    <h1>Sorry, there aren't any bookings yet</h1>
-  <% else %>
-    <% @bookings.each do |booking| %>
-      <h3><%= booking.user.first_name %> <%= booking.user.last_name %></h3>
-      <p>Start date: <%= booking.date_from%></p>
-      <p>End date: <%= booking.date_to %></p>
+    <h1>Looks like there aren't any bookings yet... Book now!</h1>
+    <%= link_to new_outfit_booking_path(@outfit) do %>
+      <div class="btn btn-success">Book!</div>
     <% end %>
+  <% else %>
+    <div>
+      <h1>Approved Bookings:</h1>
+      <%= render "approved_bookings" %>
+    </div>
+    <div>
+      <h1>Pending Bookings:</h1>
+      <%= render "pending_bookings" %>
+    </div>
   <% end %>
 </div>

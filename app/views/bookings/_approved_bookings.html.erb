@@ -1,0 +1,12 @@
+<% @bookings.each do |booking| %>
+  <div>
+    <% if booking.approve %>
+      <ul>
+        <li class="border-left border-success mt-3 px-3", style="border-width: 10px !important;">
+          <h2><%= booking.user.first_name %> <%= booking.user.last_name %></h2>
+          <p><%= booking.date_from %> - <%= booking.date_to %></p>
+        </li>
+      </ul>
+    <% end %>
+  </div>
+<% end %>
