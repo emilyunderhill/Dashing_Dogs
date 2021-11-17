@@ -1,0 +1,8 @@
+<h1>Create booking for <%= @outfit.name %> outfit</h1>
+
+
+<%= simple_form_for [ @outfit, @booking ] do |f| %>
+  <%= f.input :date_from %>
+  <%= f.input :date_to %>
+  <%= f.submit %>
+<% end %>

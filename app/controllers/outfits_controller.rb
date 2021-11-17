@@ -1,6 +1,6 @@
 class OutfitsController < ApplicationController
   before_action :set_outfit, only: %i[show edit update]
-  before_action :authenticate_user!
+  skip_before_action :authenticate_user!, only: %i[index show]
 
   def new
     @outfit = Outfit.new
