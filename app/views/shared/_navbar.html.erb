@@ -22,6 +22,7 @@
         </li>
       <% else %>
         <li class="nav-item">
+          <%= link_to 'Sell an item', new_outfit_path(@outfit), class: "navbar-button"%>
           <%= link_to "Login", new_user_session_path, class: "nav-link" %>
         </li>
       <% end %>
