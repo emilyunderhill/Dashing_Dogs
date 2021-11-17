@@ -1,18 +1,30 @@
-<h1>Doggie outfits</h1>
+<div class="container">
+  <div class="d-flex">
+    <%= link_to new_outfit_path do %>
+      <div class="btn btn-success mx-3">Create New Outfit</div>
+    <% end %>
 
-
-<% @outfits.each do |outfit| %>
-  <div>
-    <% outfit.photos.each do |photo|%>
-      <div>
-        <%= cl_image_tag photo.key, crop: :fill, width: 200, height: 200 %>
-      </div>
-    <%end%>
-    <%= outfit.name.capitalize %>
-    <%= outfit.size.capitalize %>
-    £<%= outfit.price %> / day
-    <%= link_to "View", outfit_path(outfit) %>
+    <%= link_to root_path do %>
+      <div class="btn btn-primary mx-3">Back</div>
+    <% end %>
   </div>
-<% end %>
 
-<%= link_to "Back", root_path %>
+  <div>
+    <h1>Doggie outfits 🐶</h1>
+  </div>
+
+  <div>
+    <h2>Your outfits</h2>
+    <div class="d-flex flex-wrap m-3">
+      <%= render "your_outfits" %>
+    </div>
+  </div>
+
+  <div>
+    <h2>All outfits</h2>
+    <div class="d-flex flex-wrap m-3">
+      <%= render "all_outfits" %>
+    </div>
+  </div>
+
+</div>
