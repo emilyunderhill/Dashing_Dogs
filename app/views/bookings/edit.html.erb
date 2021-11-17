@@ -1,0 +1,5 @@
+<%= form_for(@booking) do |f| %>
+  <%= f.input :date_from, placeholder: @booking.date_from %>
+  <%= f.input :date_to, placeholder: @booking.date_to %>
+  <%= f.submit %>
+<% end %>
