@@ -1,11 +1,30 @@
 p {
   color: black;
+
+  &:hover {
+    color: #cc71c6cf;
+  }
 }
 
 .footer {
-  .purpose {
-    display: flex;
-    justify-content: center;
-    background: white;
-  }
+  background-color: white;
+  height: 120px;
+}
+
+.footer .purpose {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.footer .year {
+  display: flex;
+  justify-content: center;
+  font-size: 10px;
+}
+
+.footer .paw {
+  display: flex;
+  justify-content: center;
+  color: #cc71c6cf;
 }
