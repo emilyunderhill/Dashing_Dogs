@@ -17,7 +17,7 @@ class BookingsController < ApplicationController
   end
 
   def index
-    @bookings = Booking.where(outfit_id: params[:outfit_id])
+    @bookings = @outfit.bookings
   end
 
   def edit
