@@ -16,7 +16,9 @@ class OutfitsController < ApplicationController
     end
   end
 
-  def show; end
+  def show
+    @booking = Booking.new
+  end
 
   def index
     @outfits = Outfit.all
@@ -41,11 +43,7 @@ class OutfitsController < ApplicationController
   private
 
   def outfit_params
-<<<<<<< HEAD
-    params.require(:outfit).permit(:name, :size, :price, :max_loan_period, photos: [])
-=======
-    params.require(:outfit).permit(:name, :size, :price, :max_loan_period, :description, :photos)
->>>>>>> 65e4dfde7ab0344336d1f650ad9dd39802877334
+    params.require(:outfit).permit(:name, :size, :price, :max_loan_period, :description, photos: [])
   end
 
   def set_outfit

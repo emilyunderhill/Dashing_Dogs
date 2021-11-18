@@ -6,61 +6,44 @@
 
 
 <div class="container">
-  <div class="row d-flex">
+  <div>
+    <div>
+      <%= link_to 'Back', outfits_path%>
+      <%= link_to 'Delete', outfit_path(@outfit), method: :delete, data: { confirm: 'Do you really want to delete?' }%>
+      <%= link_to 'Edit', edit_outfit_path(@outfit) %>
+      <% if current_user != @outfit.user %>
+        <%= link_to 'Book', new_outfit_booking_path(@outfit) %>
+      <% else %>
+        <%= link_to 'Bookings', outfit_bookings_path(@outfit) %>
+      <% end %>
+    </div>
+  </div>
+  <div class="row">
 
-    <div class="col-12 col-lg-8 mt-3">
+    <div class="col-12 col-lg-8 mt-3 d-flex">
       <div class="col-6">
         <%= render "carousel" %>
       </div>
-      <div class="col-6">
+      <div class="col-6 d-flex" style="flex-direction: column">
         <p>
           <%= @outfit.description %>
         </p>
+        <div>
+          <p>
+            <strong><%= @outfit.size.capitalize %></strong>
+          </p>
+          <p>
+            <strong>Price:</strong> £<%= @outfit.price %> / day
+          </p>
+          <p>
+            <strong>Maximum number of rental days:</strong> <%= @outfit.max_loan_period %>
+          </p>
+        </div>
+      </div>
+      <div class="col-6 border rounded bg-white p-3">
+        <%= render "booking_modal" %>
       </div>
     </div>
   </div>
 
-</div>
-
-<div class= 'container fluid'>
-  <div class="justify-content-center">
-    <p>
-      <strong>Outfit: </strong>
-      <%= @outfit.name %>
-    </p>
-
-    <p>
-      <strong>Size: </strong>
-      <%= @outfit.size %>
-    </p>
-
-    <p>
-      <strong>Price: </strong>
-      <%= @outfit.price %>
-    </p>
-
-    <p>
-      <strong>Max loan period: </strong>
-      <%= @outfit.max_loan_period %>
-    </p>
-
-    <p>
-      <%= @outfit.description %>
-    </p>
-
-    <div>
-      <% @outfit.photos.each do |photo|%>
-        <%= cl_image_tag photo.key, crop: :fill, width: 400, height: 400 %>
-      <%end%>
-    </div>
-
-    <%= link_to 'Back', outfits_path%>
-    <%= link_to 'Delete', outfit_path(@outfit), method: :delete, data: { confirm: 'Do you really want to delete?' }%>
-    <%= link_to 'Edit', edit_outfit_path(@outfit), class: "btn btn-warning" %>
-    <% if current_user != @outfit.user %>
-      <%= link_to 'Book', new_outfit_booking_path(@outfit) %>
-    <% else %>
-      <%= link_to 'Bookings', outfit_bookings_path(@outfit) %>
-    <% end %>
-  </div>
 </div>
