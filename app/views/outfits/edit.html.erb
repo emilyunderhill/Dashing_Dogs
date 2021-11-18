@@ -5,8 +5,8 @@
       <%= f.input :size, placeholder: @outfit.size, collection: ['extra small', 'small', 'medium', 'large', 'extra large']  %>
       <%= f.input :price, placeholder: @outfit.price %>
       <%= f.input :max_loan_period, placeholder: @outfit.max_loan_period %>
-      <%= f.input :photos, as: :file, label: 'Add photo' %>
+      <%= f.input :description, placeholder: :description %>
+      <%= f.input :photos, as: :file, label: 'Add photo', input_html: { multiple: true } %>
       <%= f.submit %>
     <% end %>
-  </div>
 </div>
