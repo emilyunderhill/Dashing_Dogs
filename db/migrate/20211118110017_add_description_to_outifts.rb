@@ -1,5 +1,5 @@
 class AddDescriptionToOutifts < ActiveRecord::Migration[6.0]
   def change
-    add_column :outfits, :description, :string
+    add_column :outfits, :description, :text
   end
 end
