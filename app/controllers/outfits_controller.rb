@@ -41,7 +41,11 @@ class OutfitsController < ApplicationController
   private
 
   def outfit_params
+<<<<<<< HEAD
     params.require(:outfit).permit(:name, :size, :price, :max_loan_period, photos: [])
+=======
+    params.require(:outfit).permit(:name, :size, :price, :max_loan_period, :description, :photos)
+>>>>>>> 65e4dfde7ab0344336d1f650ad9dd39802877334
   end
 
   def set_outfit
