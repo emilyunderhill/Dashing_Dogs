@@ -7,17 +7,18 @@
 
 <div class="container">
   <div>
-    <div>
-      <%= link_to 'Back', outfits_path%>
-      <%= link_to 'Delete', outfit_path(@outfit), method: :delete, data: { confirm: 'Do you really want to delete?' }%>
-      <%= link_to 'Edit', edit_outfit_path(@outfit) %>
+    <div class="d-flex justify-content-end mt-3">
+      <%= link_to 'Back', outfits_path, class: 'btn mr-3' %>
+      <%= link_to 'Delete', outfit_path(@outfit), method: :delete, data: { confirm: 'Do you really want to delete?' }, class: 'btn mr-3' %>
+      <%= link_to 'Edit', edit_outfit_path(@outfit), class: 'btn mr-3' %>
       <% if current_user != @outfit.user %>
-        <%= link_to 'Book', new_outfit_booking_path(@outfit) %>
+        <%= link_to 'Book', new_outfit_booking_path(@outfit), class: 'btn mr-3' %>
       <% else %>
-        <%= link_to 'Bookings', outfit_bookings_path(@outfit) %>
+        <%= link_to 'Bookings', outfit_bookings_path(@outfit), class: 'btn mr-3' %>
       <% end %>
     </div>
   </div>
+
   <div class="row">
 
     <div class="col-12 col-lg-8 mt-3 d-flex">

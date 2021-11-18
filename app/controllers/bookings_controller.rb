@@ -10,6 +10,7 @@ class BookingsController < ApplicationController
     @booking.outfit = @outfit
     @booking.user = @outfit.user
     if @booking.save
+      flash[:notice] = "Your booking request has been sent"
       redirect_to outfit_path(@outfit)
     else
       render :new
