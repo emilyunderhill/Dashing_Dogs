@@ -37,9 +37,10 @@ x = 0
       size: ['extra small', 'small', 'medium', 'large', 'extra large'].sample,
       price: (1..100).to_a.sample,
       max_loan_period: (1..10).to_a.sample,
-      user_id: user.id
+      user_id: user.id,
+      description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque obcaecati, eligendi quia quasi explicabo mollitia soluta! Numquam, nihil voluptas, atque sit, iste quidem animi dolor repellendus rem ipsum amet assumenda maxime perspiciatis! Facere blanditiis similique officiis culpa ducimus quas laborum optio commodi vero eligendi eius consequatur in debitis perspiciatis, impedit, cumque sit voluptatum quo nobis deleniti non voluptates. Doloremque voluptates laboriosam porro nihil voluptate! Architecto unde quae, ut molestiae eos numquam aliquid molestias, perferendis sint fuga saepe, amet facilis autem! Fuga aliquam dignissimos eius similique! In nulla deserunt provident asperiores ut corrupti facilis recusandae eaque. Vel ad sed expedita pariatur."
     )
-    image_url = URI.open("https://source.unsplash.com/1600x900/?dog-clothes")
+    image_url = URI.open("https://source.unsplash.com/1600x900/?dogs-in-clothes")
     outfit.photos.attach(io: image_url, filename: "#{outfit.name}.jpg")
   end
 end
