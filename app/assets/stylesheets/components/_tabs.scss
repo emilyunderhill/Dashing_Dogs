@@ -1,6 +1,9 @@
 .tabs-underlined {
   display: flex;
   align-items: center;
+  li {
+    font-size: 22px;
+  }
 }
 
 .tabs-underlined .tab-underlined:first-child {

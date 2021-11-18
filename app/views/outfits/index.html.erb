@@ -1,35 +1,27 @@
 <div class="container">
-  <div class="d-flex">
-    <%= link_to new_outfit_path do %>
-      <div class="btn btn-success mx-3">Create New Outfit</div>
-    <% end %>
+  <%= link_to "Back", root_path, class: "btn btn-primary mb-3 mt-3" %>
 
-    <%= link_to root_path do %>
-      <div class="btn btn-primary mx-3">Back</div>
-    <% end %>
-  </div>
-
-  <div>
-    <h1>Doggo outfits 🐶</h1>
-  </div>
-
-  <ul class="list-inline tabs-underlined">
-    <li>
-      <a href="#" class="tab-underlined active">All outfits</a>
+  <ul class="nav list-inline tabs-underlined mb-4" id="myTab" role="tablist">
+    <li class="nav-item" role="presentation">
+      <a id="all-tab" data-toggle="tab" href="#all" role="tab" aria-controls="all" aria-selected="true" class="tab-underlined nav-link active">All outfits</a>
     </li>
-    <li>
-      <a href="#" class="tab-underlined">My outfits</a>
+    <li class="nav-item" role="presentation">
+      <a id="myoutfit-tab" data-toggle="tab" href="#myoutfit" role="tab" aria-controls="myoutfit" aria-selected="false" class="tab-underlined nav-link">My outfits</a>
     </li>
   </ul>
 
-  <div>
-    <h2>Your outfits</h2>
-    <%= render "your_outfits" %>
-  </div>
-
-  <div>
-    <h2>All outfits</h2>
-    <%= render "all_outfits" %>
+  <div class="tab-content" id="myTabContent">
+    <div class="tab-pane fade show active" id="all" role="tabpanel" aria-labelledby="all-tab">
+      <%= render "all_outfits" %>
+    </div>
+    <div class="tab-pane fade show" id="myoutfit" role="tabpanel" aria-labelledby="myoutfit-tab">
+      <%= link_to new_outfit_path do %>
+        <button class="btn btn-primary mb-3">
+          <i class="fas fa-plus"></i>  Create new outfit
+        </button>
+      <% end %>
+      <%= render "your_outfits" %>
+    </div>
   </div>
 
 </div>

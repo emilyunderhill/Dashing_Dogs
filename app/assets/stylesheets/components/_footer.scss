@@ -1,3 +1,9 @@
+.page-container {
+  display: grid;
+  min-height: 100vh;
+  grid-template-rows: auto 1fr auto;
+}
+
 p {
   color: black;
 
@@ -7,8 +13,17 @@ p {
 }
 
 .footer {
+  position: relative;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
   background-color: white;
   height: 120px;
+}
+
+.yield {
+  min-height: calc(100vh - 194.06px);
 }
 
 .footer .purpose {
