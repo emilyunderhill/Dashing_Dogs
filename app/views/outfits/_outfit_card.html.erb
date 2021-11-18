@@ -1,0 +1,36 @@
+<%= link_to outfit_path(outfit) do %>
+  <div class="card-trip">
+    <% if outfit.photos.count > 0 %>
+      <% outfit.photos.each do |photo|%>
+        <div>
+          <%= cl_image_tag photo.key, class: "image" %>
+        </div>
+      <%end%>
+    <% else %>
+      <div>
+        <%= image_tag"dog.png", class: "image" %>
+      </div>
+    <% end %>
+    <div class="card-trip-infos">
+      <div>
+        <h2><%= outfit.name.capitalize %></h2>
+        <p><%= outfit.size.capitalize %></p>
+      </div>
+      <strong><p class="card-trip-pricing">£<%= outfit.price %>/day</p></strong>
+    </div>
+  </div>
+<% end %>
+
+
+<%# TO DO
+1. Add correct image - CHECK
+2. Add IF statement - CHECK
+3. Add buttons - CHECK
+4. Update CSS class names to be match our app
+5. Tidy the redundant code in the _your_outfits.html.erb - CHECK
+6. Update the _all_outfits.html.erb file - CHECK
+7. Sort out the responsive layout - CHECK
+8. Sort out text display, restrict it from going across multiple lines - CHECK
+9. Make the whole card link to Show page - CHECK
+10. Add default image IF the outfit instance does NOT have an image - CHECK
+11. Fix alignment with heading %>

@@ -21,7 +21,11 @@ class OutfitsController < ApplicationController
   end
 
   def index
-    @outfits = Outfit.all
+    if params[:query].present?
+      @outfits = Outfit.where("name ILIKE ?", "%#{params[:query]}%")
+    else
+      @outfits = Outfit.all
+    end
   end
 
   def edit; end
