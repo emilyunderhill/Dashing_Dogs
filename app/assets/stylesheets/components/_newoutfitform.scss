@@ -10,11 +10,13 @@
   opacity: 1.0;
   height: 600px;
   margin: 0px;
-
+  min-height: calc(100vh - 194.06px);
+  align-items: center;
   .f.input {
     background-color: red;
   }
 }
+
 
 .new-outfit-form .simple-form {
   margin-top: 100px;
@@ -29,5 +31,5 @@
 .outfit-container {
   background-image: url("bestdressed.png");
   background-size: cover;
-  height: 600px;
+  min-height: calc(100vh - 194.06px);
 }
