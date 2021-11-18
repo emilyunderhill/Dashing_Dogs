@@ -19,7 +19,11 @@ class OutfitsController < ApplicationController
   def show; end
 
   def index
-    @outfits = Outfit.all
+    if params[:query].present?
+      @outfits = Outfit.where("name ILIKE ?", "%#{params[:query]}%")
+    else
+      @outfits = Outfit.all
+    end
   end
 
   def edit; end
@@ -41,7 +45,7 @@ class OutfitsController < ApplicationController
   private
 
   def outfit_params
-    params.require(:outfit).permit(:name, :size, :price, :max_loan_period, :photos)
+    params.require(:outfit).permit(:name, :size, :price, :max_loan_period, :description, :photos)
   end
 
   def set_outfit
