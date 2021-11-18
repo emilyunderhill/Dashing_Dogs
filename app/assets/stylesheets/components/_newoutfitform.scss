@@ -1,12 +1,16 @@
 .new-outfit-form {
-  font-weight: bold;
   display: flex;
   justify-content: center;
   color: #cc71c6cf;
-  background-color: #cc71c650;
-  margin: 100px auto;
+  background-color:white;
+  border-color: #cc71c6cf;
+  border-width: 100px;
+  opacity: 1.0;
+  margin: 0px auto;
   width: 600px;
-  border-radius: 10%;
+  border-radius: 1%;
+  padding: 50px;
+  font-size: 20px;
 }
 
 .new-outfit-form .simple-form {
@@ -17,4 +21,10 @@
   .submit {
     border-radius: 100px;
   }
+}
+
+.outfit-body {
+  background-image: url("bestdressed.png");
+  background-size: cover;
+  height: 650px;
 }
