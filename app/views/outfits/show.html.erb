@@ -1,8 +1,12 @@
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)), url('<%= cl_image_path @outfit.photos[0].key, crop: :fill %>')">
-  <div class="container">
-    <h1><%= @outfit.name %></h1>
+<% if @outfit.photos.attached? %>
+  <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)), url('<%= cl_image_path @outfit.photos[0].key, crop: :fill %>')">
+<% else %>
+  <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)), url('../../assets/images/dog.png')">
+<% end %>
+    <div class="container">
+      <h1><%= @outfit.name %></h1>
+    </div>
   </div>
-</div>
 
 
 <div class="container mb-5">
