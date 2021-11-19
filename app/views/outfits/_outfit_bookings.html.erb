@@ -1,0 +1,15 @@
+<div>
+  <h3>Bookings</h3>
+  <% if @bookings.empty? %>
+    <p><strong>Woof!</strong> Looks like there aren't any bookings yet... </p>
+  <% else %>
+    <div>
+      <p><strong>Approved Bookings:</strong></p>
+      <%= render "approved_bookings" %>
+    </div>
+    <div>
+      <p><strong>Pending Bookings:</strong></p>
+      <%= render "pending_bookings" %>
+    </div>
+  <% end %>
+</div>

@@ -18,6 +18,10 @@ class OutfitsController < ApplicationController
 
   def show
     @booking = Booking.new
+    @bookings = Booking.where(outfit_id: @outfit.id)
+    @your_bookings = @bookings.select do |booking|
+      booking.user == current_user
+    end
   end
 
   def index

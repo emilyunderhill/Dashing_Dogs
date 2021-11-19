@@ -42,7 +42,11 @@
         </div>
       </div>
       <div class="col-6 border rounded bg-white p-3">
-        <%= render "booking_modal" %>
+        <% if current_user == @outfit.user %>
+          <%= render "outfit_bookings" %>
+        <% else %>
+          <%= render "booking_modal" %>
+        <% end %>
       </div>
     </div>
   </div>

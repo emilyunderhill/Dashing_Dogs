@@ -1,5 +1,5 @@
 class BookingsController < ApplicationController
-  before_action :set_outfit, only: [:new, :create, :index]
+  before_action :set_outfit, only: %i[new create index]
 
   def new
     @booking = Booking.new
@@ -8,7 +8,7 @@ class BookingsController < ApplicationController
   def create
     @booking = Booking.new(booking_params)
     @booking.outfit = @outfit
-    @booking.user = @outfit.user
+    @booking.user = current_user
     if @booking.save
       flash[:notice] = "Your booking request has been sent"
       redirect_to outfit_path(@outfit)
@@ -30,6 +30,19 @@ class BookingsController < ApplicationController
     @booking.update(booking_params)
 
     redirect_to booking_path(@booking)
+  end
+
+  def destroy
+    @booking = Booking.find(params[:id])
+    @booking.destroy!
+    redirect_to outfit_path(@booking.outfit), alert: "Booking cancelled"
+  end
+
+  def approve
+    @booking = Booking.find(params[:outfit_id])
+    @booking.approve = true
+    @booking.save
+    redirect_to outfit_path(@booking.outfit), notice: "Booking approved"
   end
 
   private

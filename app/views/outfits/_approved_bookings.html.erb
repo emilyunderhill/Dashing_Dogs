@@ -3,8 +3,9 @@
     <% if booking.approve %>
       <ul>
         <li class="border-left border-success mt-3 px-3", style="border-width: 10px !important;">
-          <h2><%= booking.user.first_name %> <%= booking.user.last_name %></h2>
+          <p><strong><%= booking.user.first_name %> <%= booking.user.last_name %></strong></p>
           <p><%= booking.date_from %> - <%= booking.date_to %></p>
+          <%= link_to 'cancel', booking_path(booking), method: :delete, remote: :true, data: { confirm: "Are you sure?" } %>
         </li>
       </ul>
     <% end %>
