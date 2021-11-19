@@ -1,8 +1,12 @@
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)), url('<%= cl_image_path @outfit.photos[0].key, crop: :fill %>')">
-  <div class="container">
-    <h1><%= @outfit.name %></h1>
+<% if @outfit.photos.attached? %>
+  <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)), url('<%= cl_image_path @outfit.photos[0].key, crop: :fill %>')">
+<% else %>
+  <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)), url('../../assets/images/dog.png')">
+<% end %>
+    <div class="container">
+      <h1><%= @outfit.name %></h1>
+    </div>
   </div>
-</div>
 
 
 <div class="container mb-5">
@@ -31,20 +35,7 @@
         <%= render "carousel" %>
       </div>
       <div class="col-6 d-flex" style="flex-direction: column">
-        <p>
-          <%= @outfit.description %>
-        </p>
-        <div>
-          <p>
-            <strong><%= @outfit.size.capitalize %></strong>
-          </p>
-          <p>
-            <strong>Price:</strong> £<%= @outfit.price %> / day
-          </p>
-          <p>
-            <strong>Maximum number of rental days:</strong> <%= @outfit.max_loan_period %>
-          </p>
-        </div>
+          <%= render "accordian", outfit: @outfit %>
       </div>
       <div class="col-6 border rounded bg-white p-3">
         <% if current_user == @outfit.user %>
@@ -55,5 +46,4 @@
       </div>
     </div>
   </div>
-
 </div>

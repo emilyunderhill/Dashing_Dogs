@@ -19,15 +19,17 @@
   border-radius: 4px;
   margin: 20px 0px;
   text-align: center;
+.btn {
+  background-color: #cc71c6aa;
+  border: 2px #cc71c6cf;
 }
 
 .hero {
   background-size: cover;
   height: 100vh;
-  text-align: center;
-  padding-top: 40vh;
 }
 
-.hero .container {
+.home-text {
+  padding-top: 40vh;
   color: white;
 }

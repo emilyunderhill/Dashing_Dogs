@@ -1,0 +1,26 @@
+.fa-thumbs-down {
+  color: $red;
+  font-size: 28px;
+
+  &:hover {
+    font-weight: bold;
+  }
+}
+
+.fa-thumbs-up {
+  color: $green;
+  font-size: 28px;
+
+    &:hover {
+    font-weight: bold;
+  }
+}
+
+.fa-window-close {
+  color: $red;
+  font-size: 28px;
+
+  &:hover {
+    font-weight: bold;
+  }
+}
