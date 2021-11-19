@@ -1,11 +1,9 @@
 <%= link_to outfit_path(outfit) do %>
   <div class="card-trip">
     <% if outfit.photos.count > 0 %>
-      <% outfit.photos.each do |photo|%>
         <div>
-          <%= cl_image_tag photo.key, class: "image" %>
+          <%= cl_image_tag outfit.photos[0].key, class: "image" %>
         </div>
-      <%end%>
     <% else %>
       <div>
         <%= image_tag"dog.png", class: "image" %>
