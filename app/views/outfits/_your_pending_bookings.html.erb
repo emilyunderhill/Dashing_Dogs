@@ -2,7 +2,7 @@
   <div>
     <% if booking.approve == false %>
       <ul>
-        <li class="border-left border-warning border-5 mt-3 px-3", style="border-width: 10px !important;">
+        <li class="flash flash-warning mt-3 px-3">
           <p><%= booking.date_from %> - <%= booking.date_to %></p>
           <%= link_to 'cancel', booking_path(booking), method: :delete, remote: :true, data: { confirm: "Are you sure?" } %>
         </li>
