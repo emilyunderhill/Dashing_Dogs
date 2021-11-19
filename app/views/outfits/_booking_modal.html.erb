@@ -10,21 +10,15 @@
   <% end %>
 </div>
 
-<div class="mt-3">
-  <p><strong>Total price:</strong> TODO</p>
-</div>
-
 <div>
   <h3>Your bookings</h3>
   <% if @your_bookings.empty? %>
     <p>Looks like you don't have any bookings yet... <strong>Book now</strong></p>
   <% else %>
     <div>
-      <p><strong>Approved Bookings:</strong></p>
       <%= render "your_approved_bookings" %>
     </div>
     <div>
-      <p><strong>Pending Bookings:</strong></p>
       <%= render "your_pending_bookings" %>
     </div>
   <% end %>
