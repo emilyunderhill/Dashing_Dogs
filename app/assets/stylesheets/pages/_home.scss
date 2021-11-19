@@ -25,3 +25,15 @@
   margin: 20px 0px;
   text-align: center;
 }
+
+.hero {
+  background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)), url('https://frenchbullevard.com/wp-content/uploads/2016/12/dogs_variety_yorkshire_terrier_chihuahua_costumes_56005_1280x720.jpg');
+  background-size: cover;
+  height: 100vh;
+  text-align: center;
+  padding-top: 40vh;
+}
+
+.hero .container {
+  color: white;
+}
