@@ -11,6 +11,11 @@
         </div>
       <% end %>
     <% end %>
+    <div>
+     <%= link_to outfit_path, method: :delete, data: { confirm: 'Do you really want to delete?' }, class: 'btn mr-3' do%>
+        <i class="fas fa-trash"></i>
+        <%end%>
+    </div>
   </div>
  <button class="carousel-control-prev" type="button" data-target="#carouselExampleControls" data-slide="prev">
     <span class="carousel-control-prev-icon" aria-hidden="true"></span>

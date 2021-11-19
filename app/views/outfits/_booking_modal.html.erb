@@ -6,7 +6,7 @@
   <%= simple_form_for [ @outfit, @booking ] do |f| %>
     <%= f.input :date_from, as: :date, html5: true %>
     <%= f.input :date_to, as: :date, html5: true %>
-    <%= f.submit 'Book!', class: 'btn', method: :create %>
+    <%= f.submit 'Book!', class: 'book-btn', method: :create %>
   <% end %>
 </div>
 

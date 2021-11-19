@@ -1,0 +1,37 @@
+.btn {
+  background-color: #cc71c6bc;
+  border: 2px #cc71c6cf;
+  color: white;
+  text-align: center;
+}
+
+.book-btn{
+  background-color: #cc71c6bc;
+  border: 2px #cc71c6cf;
+  color: white;
+  text-align: center;
+  width: 100%;
+  align-content: center;
+  height: 35px;
+   &:hover {
+     color: black;
+   }
+}
+
+.back{
+  color: grey;
+  display: inline-block;
+  margin-top: 15px;
+  &:hover {
+    text-decoration:none;
+    color: rgb(218,157,213);
+  }
+}
+
+.edit-btn {
+  background-color: white;
+  border: 1px solid #cc71c6cf;
+  color: #cc71c6cf;
+  text-align: center;
+  border-radius: 3px;
+}
