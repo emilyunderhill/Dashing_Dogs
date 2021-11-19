@@ -31,6 +31,7 @@
   cursor: pointer;
   display: flex;
   transition-duration: 0.4s;
+  margin-right: 15px;
 }
 
 .navbar-lewagon .navbar-button:hover {
@@ -51,11 +52,16 @@
 .navbar-search {
   display:flex;
   flex-wrap: nowrap;
+  border-color:rgb(229, 153, 166);
 }
 
 .input-group-text {
-  border-radius: 0 2px 2px 0;
+  border-radius: 0 10px 10px 0;
   border-left: none;
+  color:white;
+  background-color: rgb(218,157,213);
+  border-color:rgb(218,157,213);
+  height: 95%;
 }
 
 .navbar-nav{
@@ -64,4 +70,9 @@
 
 .search{
   margin-left: 20px;
+}
+
+.form-control{
+  border-color:rgb(218,157,213);
+  border-radius: 10px
 }
