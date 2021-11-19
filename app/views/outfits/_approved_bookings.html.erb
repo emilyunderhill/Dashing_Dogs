@@ -2,10 +2,15 @@
   <div>
     <% if booking.approve %>
       <ul>
-        <li class="flash flash-success mt-3 px-3">
+        <li class="flash-booking flash-success mt-3 px-3">
           <p><strong><%= booking.user.first_name %> <%= booking.user.last_name %></strong></p>
-          <p><%= booking.date_from %> - <%= booking.date_to %></p>
-          <%= link_to 'cancel', booking_path(booking), method: :delete, remote: :true, data: { confirm: "Are you sure?" } %>
+          <p><strong>Start:</strong> <%= booking.date_from.strftime("%B #{booking.date_from.day.ordinalize}, %Y") %></p>
+          <p><strong>End:</strong> <%= booking.date_to.strftime("%B #{booking.date_to.day.ordinalize}, %Y") %></p>
+          <div>
+            <%= link_to booking_path(booking), method: :delete, remote: :true, data: { confirm: "Are you sure?" } do %>
+              <i class="far fa-thumbs-down"></i>
+            <% end %>
+          </div>
         </li>
       </ul>
     <% end %>
