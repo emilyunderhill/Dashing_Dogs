@@ -16,3 +16,11 @@
 li {
   list-style-type: none;
 }
+
+body {
+  cursor: url(http://www.zingerbugimages.com/cursors/paws1.ani), url(http://www.zingerbug.com/cursors/cursors/paws1.gif), progress !important;
+}
+
+a:hover, input:hover {
+  cursor: url(http://www.zingerbugimages.com/cursors/pink_paws.ani), url(http://www.zingerbug.com/cursors/cursors/pink_paws.gif), progress !important;
+}
